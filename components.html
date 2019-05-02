@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <title>Vuejs</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+        <div id="root">
+                <panel title="This is panel Title" >
+                    <h1>Enter Your Name</h1>
+                    <input type="text" name="">
+                    <button>Submit</button>
+                </panel>
+
+            </div>
+
+
+        <script type="text/javascript" src="vue.js"></script>
+       
+              <script type="text/javascript">
+
+              //global component
+
+              Vue.component("panel", {
+                  template: `
+                  <div class="panel" v-if="show">
+                    <div class="panelTitle">
+                    <div class = "close" @click="show = false">close</div>
+                    {{  title }}
+                    </div>
+                    <div class="panelContent"> 
+
+                   <slot></slot>
+                    </div> 
+                    <div class="panelTitle">Mahabubur Rahman Kausar</div>
+                </div>
+                `,
+                props : ['title', 'content'],
+
+                data: function() {
+                    return {
+                        show:true
+                    }
+                }
+              })
+
+//to show html tag use slot tag
+              
+
+                    var app = new Vue({
+                        el:'#root',
+                        data: {
+                           
+  
+                        },
+
+                    })
+              </script>
+              
+    
+</body>
+</html>

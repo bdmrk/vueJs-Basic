@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <title>Vuejs</title>
+
+    <style>
+        ul{
+            list-style:none;
+        }
+    
+    </style>
+</head>
+<body>
+
+        <div id="root">
+            <h1 class="">Skills</h1>
+        <hr/>
+            <ul>     
+                <!-- <li v-for="skill in skills">{{ skill }}</li>    -->
+                <!-- <li v-for="skill in skills" >
+                        {{ skill.name }} ({{ skill.experience }})
+                </li> -->
+                <li v-for="(skill, i) in skills" >
+                     {{ i+1 }}   {{ skill.name }} ({{ skill.experience }})
+                </li>
+            </ul>
+
+          
+        </div>
+
+
+        <script type="text/javascript" src="vue.js"></script>
+       
+
+
+              <script type="text/javascript">
+                    var app = new Vue({
+                        el:'#root',
+                        data: {
+                            // skills: ["HTML", "JS", "CSS", "PHP", "nodeJs"]
+
+                            skills: [
+                                {name: "HTML", experience:5},
+                                {name: "CSS", experience:2},
+                                {name: "Java", experience:2},
+                                {name: "Android", experience:4},
+
+
+                            ],
+
+                        }
+                    })
+              </script>
+              
+    
+</body>
+</html>

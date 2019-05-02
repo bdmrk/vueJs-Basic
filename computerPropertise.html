@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <title>Vuejs</title>
+
+    <style>
+        ul{
+            list-style:none;
+        }
+    
+    </style>
+</head>
+<body>
+
+        <div id="root">
+            <h1>All Payments</h1>
+        <hr/>
+            <ul>     
+                <li v-for="(payment, i) in payments" >
+                    <p>
+                     {{ i+1 }}. {{ payment.name }} {{ payment.amount }} 
+                    </p>
+                </li>
+            </ul>
+
+
+            <h1>Unpaid Payments</h1>
+        <hr/>
+            <ul>     
+                <li v-for="(payment, i) in unpaidPayments" >
+                    <p>
+                     {{ i+1 }}. {{ payment.name }} {{ payment.amount }} 
+                    </p>
+                </li>
+            </ul>
+        
+            <hr/>
+            <h1>Total Amount: {{ totalAmount }}</h1>
+        
+        </div>
+
+
+        <script type="text/javascript" src="vue.js"></script>
+       
+              <script type="text/javascript">
+                    var app = new Vue({
+                        el:'#root',
+                        data: {
+                            payments: [
+                            {name:"House Rent", amount:11500, paid:true},
+                                {name:"Gas", amount:500, paid:true},
+                                {name:"Electriciy", amount:1000, paid:false},
+                                {name:"Water", amount:700, paid:false},
+                                {name:"Internet", amount:600, paid:true},
+                            ]
+                        },
+
+                        computed: {
+                                unpaidPayments: function() {
+                                    return this.payments.filter(function(p){
+                                        return !p.paid;
+                                    });
+                                    
+                                },
+                                totalAmount: function(){
+                                    var sum = 0;
+                                    for(var i = 0; i< this.payments.length; i++){
+                                                sum += this.payments[i].amount;
+                                    }
+                                    return sum;
+                                },
+
+                            
+                        },
+                    })
+              </script>
+              
+    
+</body>
+</html>

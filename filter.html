@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <title>Vuejs</title>
+
+    <style>
+        ul{
+            list-style:none;
+        }
+    
+    </style>
+</head>
+<body>
+        <div id="root">
+            <!-- <h2>{{ upperCase }}</h2>
+            <h2>{{ lowerCase }}</h2> -->
+
+            <h2>{{ name | upper }}</h2>
+            <h2>{{ profession | lower}}</h2>
+            <p> {{ today | bdFormate }} </p>
+        </div>
+
+
+        <script type="text/javascript" src="vue.js"></script>
+       
+              <script type="text/javascript">
+
+              //Globar Filter
+
+            Vue.filter('lower', function(s){
+
+                return s.toLowerCase();
+
+            })
+
+
+
+                    var app = new Vue({
+                        el:'#root',
+                        data: {
+                            name : "Mahabubur Rahman Kausar",
+                            profession: "Software Engineer",
+
+                            today: new Date(),
+                            
+                        },
+
+                        // computed: {
+                        //         upperCase: function() {
+                        //             return this.name.toUpperCase();
+                                    
+                        //         },
+
+                        //         lowerCase: function(){
+                        //             return this.name.toLowerCase();
+                        //         }
+                        // },
+
+                        //Local Filter
+
+                        filters: {
+                            upper: function(s) {
+
+                                return s.charAt(0).toUpperCase() + s.slice(1)
+                                return s.toUpperCase();
+                            }, 
+                            bdFormate: function(d) {
+                                return d.getUTCDate() + "." + d.getUTCMonth() + "." + d.getUTCFullYear();
+                            } ,
+                        }
+                    })
+              </script>
+              
+    
+</body>
+</html>

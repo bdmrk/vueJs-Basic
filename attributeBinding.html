@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <title>Vuejs</title>
+
+    <style>
+        ul{
+            list-style:none;
+        }
+        li{
+            display: inline;
+        }
+        .active{
+            background: #0B7B0A;
+            color:#ffffff;
+            padding:5px;
+
+        }
+    </style>
+</head>
+<body>
+
+        <div id="root">
+            <ul>
+                <li>
+                        <a :class = "{'active' : activeLink == 'link1'}" v-bind:href="link1.url" :title="link1.title">{{ link1.text }}</a>
+                </li>
+                <li>
+                        <a :class = "{'active' : activeLink == 'link2'}" v-bind:href="link2.url" :title="link2.title">{{ link2.text }}</a>
+                </li>
+            </ul>
+
+            <br><br><br>
+            <p v-html="html"></p>
+        </div>
+
+
+        <script type="text/javascript" src="vue.js"></script>
+
+
+              <script type="text/javascript">
+                    var app = new Vue({
+                        el:'#root',
+                        data: {
+                         link1: {
+                             text: "Facebook", title:"Go To Facebook", url: "https://Facebook.com"
+                         },
+
+                         link2: {
+                            text: "Youtube" , title: "Go To Youtube", url:"https://youtube.com"
+                         },
+
+                         activeLink : "link2",
+
+                         html: '<a href="https://kausar.info">About Me </a>',
+
+                        }
+                    
+                    })
+              </script>
+              
+    
+</body>
+</html>

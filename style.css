@@ -1,0 +1,75 @@
+body {
+    background: #e3e3e3;
+}
+
+/*========================panel==========================*/
+
+.panel {
+    width: 960px;
+    margin: 44px auto;
+    border: 1px solid #c5c0c0;
+    background: #EEEEEE;
+}
+
+.panelTitle {
+    background: #d1d1d1;
+    font-weight: bold;
+    padding: 9px;
+    color: #505050;
+}
+
+.panelContent {
+    padding: 22px;
+    background: #fff;
+    min-height: 111px;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+    padding: 0 9px;
+}
+
+.close:hover {
+    background: #c85454
+}
+
+/*========================Modal==========================*/
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5)
+}
+.modalContent {
+    width: 960px;
+    background: #fff;
+    margin-top: 99px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modalHeader { 
+    background: #efefef;
+    font-weight: bold;
+    padding: 16px, 9px;
+    color: #505050;
+
+}
+
+.modalBody {
+    padding: 22px;
+    background: #fff;
+    min-height: 222px;
+}
+
+.modalFooter {
+    padding: 9px;
+    background: #d1d1d1;
+    font-weight: bold;
+    color: #505050;
+}
+
