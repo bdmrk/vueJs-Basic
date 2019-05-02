@@ -14,7 +14,20 @@
 </head>
 <body>
         <div id="root">
-            
+
+            <button @click="showLogin = true">Login</button>
+            <modal v-if="showLogin" @onsave="showLogin = false">
+                <template slot="header">
+                    This is Modal header
+
+                </template>
+
+                <template slot="body">
+                        <h3>Enter Your Name</h3>
+                        <input type="text" name="">
+    
+                    </template>
+            </modal>
 
             </div>
 
@@ -27,14 +40,23 @@
 
               Vue.component("modal", {
                   template: `
-                  <div class="modal">
-                    <div class="modalContent"> 
+                    <div class="modal">
+                        <div class="modalContent"> 
 
-                    <div class="modalHeader"></div>
+                        <div class="modalHeader">
+                            <slot name="header"> </slot>
+                        </div>
 
-                    <div class="modalBody"></div>
+                        <div class="modalBody">
+                            <slot name="body"></slot>
+                        </div>
 
-                    <div class="modalFooter"></div>
+                        <div class="modalFooter">
+                            <button @click = "$emit('onsave')">Save</button>
+                            <button>Cancel</button>
+                        
+                        </div>
+
                     </div>
 
                 </div>

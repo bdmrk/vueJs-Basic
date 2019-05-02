@@ -45,7 +45,7 @@ body {
     background: rgba(0, 0, 0, 0.5)
 }
 .modalContent {
-    width: 960px;
+    width: 350px;
     background: #fff;
     margin-top: 99px;
     margin-left: auto;
@@ -55,8 +55,9 @@ body {
 .modalHeader { 
     background: #efefef;
     font-weight: bold;
-    padding: 16px, 9px;
+    padding: 20px 9px;
     color: #505050;
+    text-align: center
 
 }
 
