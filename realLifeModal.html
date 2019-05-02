@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <title>Vuejs Modal</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+        <div id="root">
+            <tabs>
+                <tab name ="tab1" selected="true">Tab Content.... <button>Btn1</button></tab>
+                <tab name ="tab2">Tab Content2</tab>
+                <tab name ="tab3">Tab Content3</tab>
+                <tab name ="tab4">Tab Content4</tab>
+                <tab name ="tab5">Tab Content5</tab>
+
+
+            </tabs>
+
+            </div>
+
+
+        <script type="text/javascript" src="vue.js"></script>
+        <script type="text/javascript" src="js/component.js"></script>
+       
+              <script type="text/javascript">
+              
+
+              //global component
+
+              Vue.component("modal", {
+                  template: `
+                    <div class="modal">
+                        <div class="modalContent"> 
+
+                        <div class="modalHeader">
+                            <slot name="header"> </slot>
+                        </div>
+
+                        <div class="modalBody">
+                            <slot name="body"></slot>
+                        </div>
+
+                        <div class="modalFooter">
+                            <button @click = "$emit('onsave')">Save</button>
+                            <button>Cancel</button>
+                        
+                        </div>
+
+                    </div>
+
+                </div>
+                `,
+                props : ['title', 'content'],
+
+                data: function() {
+                    return {
+                        show:true
+                    }
+                }
+              })
+
+//to show html tag use slot tag
+              
+
+                    var app = new Vue({
+                        el:'#root',
+                        data: {
+                           showLogin: false
+  
+                        },
+
+                    })
+              </script>
+              
+    
+</body>
+</html>

@@ -74,3 +74,34 @@ body {
     color: #505050;
 }
 
+
+/*================Tab=============*/
+
+.tab {
+    border:1 px solid #4c4c4c;
+    width: 960px;
+    min-height: 111px;
+    background: #fff;
+    margin: 44px auto;
+}
+
+.tab ul {
+    margin: 0;
+    list-style: none;
+    background: #b5b5b5;
+}
+
+.tab li {
+    display: inline-block;
+    cursor: pointer;
+    padding: 9px;
+    margin-top: 9px;
+}
+
+.tab li.active {
+    background: #fff;
+}
+
+.details {
+    padding: 44px;
+}
