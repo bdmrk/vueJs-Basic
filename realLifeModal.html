@@ -35,45 +35,12 @@
 
               //global component
 
-              Vue.component("modal", {
-                  template: `
-                    <div class="modal">
-                        <div class="modalContent"> 
-
-                        <div class="modalHeader">
-                            <slot name="header"> </slot>
-                        </div>
-
-                        <div class="modalBody">
-                            <slot name="body"></slot>
-                        </div>
-
-                        <div class="modalFooter">
-                            <button @click = "$emit('onsave')">Save</button>
-                            <button>Cancel</button>
-                        
-                        </div>
-
-                    </div>
-
-                </div>
-                `,
-                props : ['title', 'content'],
-
-                data: function() {
-                    return {
-                        show:true
-                    }
-                }
-              })
-
-//to show html tag use slot tag
+            
               
 
                     var app = new Vue({
                         el:'#root',
                         data: {
-                           showLogin: false
   
                         },
 
